@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
 <title>Excel to iNat CSV</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="Excel+to+iNat+CSV_files/require.js"></script>
+<script src="Excel+to+iNat+CSV_files/jquery.js"></script>
 
 <style type="text/css">
     /*!
@@ -11718,13 +11718,13 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="Excel+to+iNat+CSV_files/custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="Excel+to+iNat+CSV_files/MathJax.js"></script>
     <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+    <script type="text/x-mathjax-config;executed=true">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -11741,8 +11741,103 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration --></head>
-<body>
+    <!-- End of mathjax configuration --><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body><div style="display: none;" id="MathJax_Message"></div>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -11751,8 +11846,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Extracting-Data-from-Excel-Spreadsheets-into-a-CSV-for-Upload-to-iNaturalist">Extracting Data from Excel Spreadsheets into a CSV for Upload to iNaturalist<a class="anchor-link" href="#Extracting-Data-from-Excel-Spreadsheets-into-a-CSV-for-Upload-to-iNaturalist">&#182;</a></h1><p>Dr. Joel Miles, Palau Invasive Species Coordinator, has been storing data from a Palau Invasive Plant survey as spreadsheets in an Excel Workbook. 
-As a technical challenge, I wrote this iPython notebook to wrangle the data into a CSV for ingestion by iNaturalist.</p>
+<h1 id="Extracting-Data-from-Excel-Spreadsheets-into-a-CSV-for-Upload-to-iNaturalist">Extracting Data from Excel Spreadsheets into a CSV for Upload to iNaturalist<a class="anchor-link" href="#Extracting-Data-from-Excel-Spreadsheets-into-a-CSV-for-Upload-to-iNaturalist">¶</a></h1><p>Dr.
+ Joel Miles, Palau Invasive Species Coordinator, has been storing data 
+from a Palau Invasive Plant survey as spreadsheets in an Excel Workbook.
+ 
+As a technical challenge, I wrote this iPython notebook to wrangle the 
+data into a CSV for ingestion by iNaturalist.</p>
 
 </div>
 </div>
@@ -11763,7 +11862,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max_rows&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">"display.max_rows"</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11776,7 +11875,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Grab-the-fields-we-want-from-each-spreadsheet-and-store-in-a-dataframe">Grab the fields we want from each spreadsheet and store in a dataframe<a class="anchor-link" href="#Grab-the-fields-we-want-from-each-spreadsheet-and-store-in-a-dataframe">&#182;</a></h3>
+<h3 id="Grab-the-fields-we-want-from-each-spreadsheet-and-store-in-a-dataframe">Grab the fields we want from each spreadsheet and store in a dataframe<a class="anchor-link" href="#Grab-the-fields-we-want-from-each-spreadsheet-and-store-in-a-dataframe">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11785,13 +11884,13 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Place name&#39;</span><span class="p">,</span> <span class="s1">&#39;Plant Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Place name'</span><span class="p">,</span> <span class="s1">'Plant Code'</span><span class="p">,</span> <span class="s1">'Longitude'</span><span class="p">,</span> <span class="s1">'Latitude'</span><span class="p">])</span>
 
-<span class="n">xls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelFile</span><span class="p">(</span><span class="s1">&#39;PAN Workbook for Data Management v4.xlsx&#39;</span><span class="p">)</span>
+<span class="n">xls</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelFile</span><span class="p">(</span><span class="s1">'PAN Workbook for Data Management v4.xlsx'</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">sheet_name</span> <span class="ow">in</span> <span class="n">xls</span><span class="o">.</span><span class="n">sheet_names</span><span class="p">:</span>
     <span class="n">df1</span> <span class="o">=</span> <span class="n">xls</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Plant Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">]]</span>
-    <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Place name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">, Palau&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">)</span>
+    <span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s1">'Date'</span><span class="p">,</span> <span class="s1">'Plant Code'</span><span class="p">,</span> <span class="s1">'Longitude'</span><span class="p">,</span> <span class="s1">'Latitude'</span><span class="p">]]</span>
+    <span class="n">df1</span><span class="p">[</span><span class="s1">'Place name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="si">{}</span><span class="s1">, Palau'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">)</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
@@ -11808,7 +11907,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe" border="1">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -11877,7 +11976,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Remove-unnecessary-rows-(those-without-a-Plant-Code)">Remove unnecessary rows (those without a Plant Code)<a class="anchor-link" href="#Remove-unnecessary-rows-(those-without-a-Plant-Code)">&#182;</a></h3>
+<h3 id="Remove-unnecessary-rows-(those-without-a-Plant-Code)">Remove unnecessary rows (those without a Plant Code)<a class="anchor-link" href="#Remove-unnecessary-rows-%28those-without-a-Plant-Code%29">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11886,8 +11985,8 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">])]</span> <span class="c1"># Remove rows where Plant Code is blank (null)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;None&#39;</span><span class="p">]</span>   <span class="c1"># Remove rows where Plant Code is &#39;None&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">])]</span> <span class="c1"># Remove rows where Plant Code is blank (null)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'None'</span><span class="p">]</span>   <span class="c1"># Remove rows where Plant Code is 'None'</span>
 <span class="c1">#df</span>
 </pre></div>
 
@@ -11901,7 +12000,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Remove-rows-with-bad-data">Remove rows with bad data<a class="anchor-link" href="#Remove-rows-with-bad-data">&#182;</a></h3>
+<h3 id="Remove-rows-with-bad-data">Remove rows with bad data<a class="anchor-link" href="#Remove-rows-with-bad-data">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11924,7 +12023,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Swap-column-headers-for-Latitude-and-Longitude">Swap column headers for Latitude and Longitude<a class="anchor-link" href="#Swap-column-headers-for-Latitude-and-Longitude">&#182;</a></h3><p>The columns for latitude and longitude are mislabeled in the original spreadsheet,</p>
+<h3 id="Swap-column-headers-for-Latitude-and-Longitude">Swap column headers for Latitude and Longitude<a class="anchor-link" href="#Swap-column-headers-for-Latitude-and-Longitude">¶</a></h3><p>The columns for latitude and longitude are mislabeled in the original spreadsheet,</p>
 
 </div>
 </div>
@@ -11934,9 +12033,9 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">})</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Latitude&#39;</span><span class="p">:</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">})</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Longitude'</span><span class="p">:</span> <span class="s1">'x'</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Latitude'</span><span class="p">:</span> <span class="s1">'Longitude'</span><span class="p">})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'x'</span><span class="p">:</span> <span class="s1">'Latitude'</span><span class="p">})</span>
 <span class="c1">#df</span>
 </pre></div>
 
@@ -11950,7 +12049,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Convert-GPS-coordinates-to-decimal-degrees">Convert GPS coordinates to decimal degrees<a class="anchor-link" href="#Convert-GPS-coordinates-to-decimal-degrees">&#182;</a></h3>
+<h3 id="Convert-GPS-coordinates-to-decimal-degrees">Convert GPS coordinates to decimal degrees<a class="anchor-link" href="#Convert-GPS-coordinates-to-decimal-degrees">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11966,10 +12065,10 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
     <span class="k">return</span> <span class="n">degrees</span> <span class="o">+</span> <span class="n">minutes</span> <span class="o">/</span> <span class="mf">60.0</span>
 
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">dd_longitude</span> <span class="o">=</span> <span class="n">decimal_degrees</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">])</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="n">dd_longitude</span><span class="p">)</span>
-    <span class="n">dd_latitude</span> <span class="o">=</span> <span class="n">decimal_degrees</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">])</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="n">dd_latitude</span><span class="p">)</span>
+    <span class="n">dd_longitude</span> <span class="o">=</span> <span class="n">decimal_degrees</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'Longitude'</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">'Longitude'</span><span class="p">,</span> <span class="n">dd_longitude</span><span class="p">)</span>
+    <span class="n">dd_latitude</span> <span class="o">=</span> <span class="n">decimal_degrees</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">'Latitude'</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">'Latitude'</span><span class="p">,</span> <span class="n">dd_latitude</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11982,7 +12081,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Convert-plant-codes-to-upper-case-and-list-unique-values">Convert plant codes to upper case and list unique values<a class="anchor-link" href="#Convert-plant-codes-to-upper-case-and-list-unique-values">&#182;</a></h3>
+<h3 id="Convert-plant-codes-to-upper-case-and-list-unique-values">Convert plant codes to upper case and list unique values<a class="anchor-link" href="#Convert-plant-codes-to-upper-case-and-list-unique-values">¶</a></h3>
 </div>
 </div>
 </div>
@@ -11991,8 +12090,8 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-<span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12007,46 +12106,46 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;ACAAUR&#39;,
- &#39;ADEPAV&#39;,
- &#39;ALLCAT&#39;,
- &#39;ARUDON&#39;,
- &#39;ARUGRA&#39;,
- &#39;BIDALB&#39;,
- &#39;BOUNDARY&#39;,
- &#39;CENPOL&#39;,
- &#39;CENPUR&#39;,
- &#39;CHANIC&#39;,
- &#39;CHRODO&#39;,
- &#39;CLIHIR&#39;,
- &#39;DESINC&#39;,
- &#39;DIESEG&#39;,
- &#39;EPIPIN&#39;,
- &#39;FALMOL&#39;,
- &#39;HYPCAP&#39;,
- &#39;IMPCON&#39;,
- &#39;LANCAM&#39;,
- &#39;LEULEU&#39;,
- &#39;MACATR&#39;,
- &#39;MEGMAX&#39;,
- &#39;MIKMIC&#39;,
- &#39;MIMPUD&#39;,
- &#39;MUNCAL&#39;,
- &#39;NENENG&#39;,
- &#34;NENENG&#39;S UNCLE&#34;,
- &#39;RATS TAIL&#39;,
- &#39;RATTAN&#39;,
- &#39;SACSPO&#39;,
- &#39;SESCAN&#39;,
- &#39;SORHAL&#39;,
- &#39;SPHTRI&#39;,
- &#39;STACAY&#39;,
- &#39;STAJAM&#39;,
- &#39;SURATO&#39;,
- &#39;THUGRA&#39;,
- &#39;TRASPA&#39;,
- &#39;TURSUB&#39;,
- &#39;UNKNOWN&#39;]</pre>
+<pre>['ACAAUR',
+ 'ADEPAV',
+ 'ALLCAT',
+ 'ARUDON',
+ 'ARUGRA',
+ 'BIDALB',
+ 'BOUNDARY',
+ 'CENPOL',
+ 'CENPUR',
+ 'CHANIC',
+ 'CHRODO',
+ 'CLIHIR',
+ 'DESINC',
+ 'DIESEG',
+ 'EPIPIN',
+ 'FALMOL',
+ 'HYPCAP',
+ 'IMPCON',
+ 'LANCAM',
+ 'LEULEU',
+ 'MACATR',
+ 'MEGMAX',
+ 'MIKMIC',
+ 'MIMPUD',
+ 'MUNCAL',
+ 'NENENG',
+ "NENENG'S UNCLE",
+ 'RATS TAIL',
+ 'RATTAN',
+ 'SACSPO',
+ 'SESCAN',
+ 'SORHAL',
+ 'SPHTRI',
+ 'STACAY',
+ 'STAJAM',
+ 'SURATO',
+ 'THUGRA',
+ 'TRASPA',
+ 'TURSUB',
+ 'UNKNOWN']</pre>
 </div>
 
 </div>
@@ -12060,7 +12159,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Replace-Plant-Code-with-scientific-name">Replace Plant Code with scientific name<a class="anchor-link" href="#Replace-Plant-Code-with-scientific-name">&#182;</a></h3><p>We create a dictionary taxon names keyed by olant code. We then use this dictionary to add a <strong>Taxon name</strong> column. Note that I have guessed a few taxon names, but left most as Plantae.</p>
+<h3 id="Replace-Plant-Code-with-scientific-name">Replace Plant Code with scientific name<a class="anchor-link" href="#Replace-Plant-Code-with-scientific-name">¶</a></h3><p>We create a dictionary taxon names keyed by olant code. We then use this dictionary to add a <strong>Taxon name</strong> column. Note that I have guessed a few taxon names, but left most as Plantae.</p>
 
 </div>
 </div>
@@ -12070,51 +12169,51 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ACAAUR&#39;</span><span class="p">:</span> <span class="s1">&#39;Acacia auriculiformis&#39;</span><span class="p">,</span> 
-        <span class="s1">&#39;ADEPAV&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ALLCAT&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ARUDON&#39;</span><span class="p">:</span> <span class="s1">&#39;Arundo donax&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;ARUGRA&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;BIDALB&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;BOUNDARY&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;CENPOL&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;CENPUR&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;CHANIC&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;CHRODO&#39;</span><span class="p">:</span> <span class="s1">&#39;Chromolaena odorata&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;CLIHIR&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;DESINC&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;DIESEG&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;EPIPIN&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;FALMOL&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;HYPCAP&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;IMPCON&#39;</span><span class="p">:</span> <span class="s1">&#39;Imperata conferta&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;LANCAM&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;LEULEU&#39;</span><span class="p">:</span> <span class="s1">&#39;Leucaena leucocephala&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;MACATR&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;MEGMAX&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;MIKMIC&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;MIMPUD&#39;</span><span class="p">:</span> <span class="s1">&#39;Mimosa pudica&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;MUNCAL&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;NENENG&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s2">&quot;NENENG&#39;S UNCLE&quot;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;RATS TAIL&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;RATTAN&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;SACSPO&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;SESCAN&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;SORHAL&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;SPHTRI&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;STACAY&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;STAJAM&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;SURATO&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;THUGRA&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;TRASPA&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;TURSUB&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;UNKNOWN&#39;</span><span class="p">:</span> <span class="s1">&#39;Plantae&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'ACAAUR'</span><span class="p">:</span> <span class="s1">'Acacia auriculiformis'</span><span class="p">,</span> 
+        <span class="s1">'ADEPAV'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'ALLCAT'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'ARUDON'</span><span class="p">:</span> <span class="s1">'Arundo donax'</span><span class="p">,</span>
+        <span class="s1">'ARUGRA'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'BIDALB'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'BOUNDARY'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'CENPOL'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'CENPUR'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'CHANIC'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'CHRODO'</span><span class="p">:</span> <span class="s1">'Chromolaena odorata'</span><span class="p">,</span>
+        <span class="s1">'CLIHIR'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'DESINC'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'DIESEG'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'EPIPIN'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'FALMOL'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'HYPCAP'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'IMPCON'</span><span class="p">:</span> <span class="s1">'Imperata conferta'</span><span class="p">,</span>
+        <span class="s1">'LANCAM'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'LEULEU'</span><span class="p">:</span> <span class="s1">'Leucaena leucocephala'</span><span class="p">,</span>
+        <span class="s1">'MACATR'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'MEGMAX'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'MIKMIC'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'MIMPUD'</span><span class="p">:</span> <span class="s1">'Mimosa pudica'</span><span class="p">,</span>
+        <span class="s1">'MUNCAL'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'NENENG'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s2">"NENENG'S UNCLE"</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'RATS TAIL'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'RATTAN'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'SACSPO'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'SESCAN'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'SORHAL'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'SPHTRI'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'STACAY'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'STAJAM'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'SURATO'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'THUGRA'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'TRASPA'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'TURSUB'</span><span class="p">:</span> <span class="s1">'Plantae'</span><span class="p">,</span>
+        <span class="s1">'UNKNOWN'</span><span class="p">:</span> <span class="s1">'Plantae'</span>
         <span class="p">}</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Taxon name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># Create a new column and populate using dictionary  </span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'Taxon name'</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">''</span>  <span class="c1"># Create a new column and populate using dictionary  </span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Taxon name&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]])</span>    
+    <span class="n">df</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="s1">'Taxon name'</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">]])</span>    
 </pre></div>
 
 </div>
@@ -12142,7 +12241,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe" border="1">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -12217,7 +12316,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Build-CSV-string">Build CSV string<a class="anchor-link" href="#Build-CSV-string">&#182;</a></h3>
+<h3 id="Build-CSV-string">Build CSV string<a class="anchor-link" href="#Build-CSV-string">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12227,20 +12326,20 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Header row</span>
-<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;Taxon name,Date observed,Description,Place name,&#39;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;Latitude / y coord / northing,Longitude / x coord / easting,&#39;</span>
-<span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;Tags,Geoprivacy</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s1">'Taxon name,Date observed,Description,Place name,'</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s1">'Latitude / y coord / northing,Longitude / x coord / easting,'</span>
+<span class="n">s</span> <span class="o">+=</span> <span class="s1">'Tags,Geoprivacy</span><span class="se">\n</span><span class="s1">'</span>
 
 <span class="c1"># Data rows</span>
 <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-        <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">,{:%Y-%m-</span><span class="si">%d</span><span class="s1">},&quot;Plant Code: </span><span class="si">{}</span><span class="s1">&quot;,&quot;</span><span class="si">{}</span><span class="s1">&quot;,</span><span class="si">{:f}</span><span class="s1">,</span><span class="si">{:f}</span><span class="s1">,,,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Taxon name&#39;</span><span class="p">],</span> 
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span>
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">],</span> <span class="c1"># Description: store Plant Code and any other data here. </span>
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Place name&#39;</span><span class="p">],</span>
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">],</span> 
-            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">])</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s1">'</span><span class="si">{}</span><span class="s1">,{:%Y-%m-</span><span class="si">%d</span><span class="s1">},"Plant Code: </span><span class="si">{}</span><span class="s1">","</span><span class="si">{}</span><span class="s1">",</span><span class="si">{:f}</span><span class="s1">,</span><span class="si">{:f}</span><span class="s1">,,,</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Taxon name'</span><span class="p">],</span> 
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Date'</span><span class="p">],</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Plant Code'</span><span class="p">],</span> <span class="c1"># Description: store Plant Code and any other data here. </span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Place name'</span><span class="p">],</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Latitude'</span><span class="p">],</span> 
+            <span class="n">row</span><span class="p">[</span><span class="s1">'Longitude'</span><span class="p">])</span>
 <span class="c1">#print(s)</span>
 </pre></div>
 
@@ -12254,7 +12353,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Write-CSV-string-to-a-file">Write CSV string to a file<a class="anchor-link" href="#Write-CSV-string-to-a-file">&#182;</a></h3>
+<h3 id="Write-CSV-string-to-a-file">Write CSV string to a file<a class="anchor-link" href="#Write-CSV-string-to-a-file">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12263,7 +12362,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Palau.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"Palau.csv"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
     <span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
@@ -12277,7 +12376,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Check-CSV-file-by-reading-it-back-as-a-Pandas-data-frame">Check CSV file by reading it back as a Pandas data frame<a class="anchor-link" href="#Check-CSV-file-by-reading-it-back-as-a-Pandas-data-frame">&#182;</a></h3>
+<h3 id="Check-CSV-file-by-reading-it-back-as-a-Pandas-data-frame">Check CSV file by reading it back as a Pandas data frame<a class="anchor-link" href="#Check-CSV-file-by-reading-it-back-as-a-Pandas-data-frame">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12286,7 +12385,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Palau.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"Palau.csv"</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">df_csv</span>
 </pre></div>
 
@@ -12302,7 +12401,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
-<table border="1" class="dataframe">
+<table class="dataframe" border="1">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -12389,7 +12488,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Write-the-first-ten-rows-to-a-CSV-for-test-upload,">Write the first ten rows to a CSV for test upload,<a class="anchor-link" href="#Write-the-first-ten-rows-to-a-CSV-for-test-upload,">&#182;</a></h3>
+<h3 id="Write-the-first-ten-rows-to-a-CSV-for-test-upload,">Write the first ten rows to a CSV for test upload,<a class="anchor-link" href="#Write-the-first-ten-rows-to-a-CSV-for-test-upload,">¶</a></h3>
 </div>
 </div>
 </div>
@@ -12399,7 +12498,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_csv</span> <span class="o">=</span> <span class="n">df_csv</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Palau_first_10_rows.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"Palau_first_10_rows.csv"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
     <span class="n">text_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 
@@ -12413,19 +12512,21 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Results-of-Test-Upload">Results of Test Upload<a class="anchor-link" href="#Results-of-Test-Upload">&#182;</a></h3><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">Within a few minutes after uploading the test CSV, I got an email message from iNaturalist<a class="anchor-link" href="#Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">&#182;</a></h4><p>If the upload fails, the email will let you know what needs to be fixed.</p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="Screenshot from 2016-08-27 10-18-39.png" alt="Email messge from iNaturalist"></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">And here's what was diplayed when I clicked on the "View your observations" link:<a class="anchor-link" href="#And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">&#182;</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="Screenshot from 2016-08-27 10-30-22.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">Note: If you scroll to the bottom of the screen, links are provided to downlad data as a CSV (spreadsheet) or KML (Google Earth/Maps).<a class="anchor-link" href="#Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">&#182;</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="Screenshot from 2016-08-27 10-31-23.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Here's-the-edit-screen-for-one-of-the-uploaded-observations">Here's the edit screen for one of the uploaded observations<a class="anchor-link" href="#Here's-the-edit-screen-for-one-of-the-uploaded-observations">&#182;</a></h4><p>Note that a tag is provided to identify uploaded observations.</p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="Screenshot from 2016-08-27 10-52-12.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">Clean Up: Deleting observations added to iNaturalist during our test<a class="anchor-link" href="#Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">&#182;</a></h4><p>To delete observations added during the upload test:</p>
+<h3 id="Results-of-Test-Upload">Results of Test Upload<a class="anchor-link" href="#Results-of-Test-Upload">¶</a></h3><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><h4 id="Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">Within a few minutes after uploading the test CSV, I got an email message from iNaturalist<a class="anchor-link" href="#Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">¶</a></h4><p>If the upload fails, the email will let you know what needs to be fixed.</p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><p><img src="Excel+to+iNat+CSV_files/fig1.png" alt="Email messge from iNaturalist"></p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><h4 id="And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">And here's what was diplayed when I clicked on the "View your observations" link:<a class="anchor-link" href="#And-here%27s-what-was-diplayed-when-I-clicked-on-the-%22View-your-observations%22-link:">¶</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><p><img src="Excel+to+iNat+CSV_files/fig2.png" alt=""></p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><h4 id="Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">Note:
+ If you scroll to the bottom of the screen, links are provided to 
+downlad data as a CSV (spreadsheet) or KML (Google Earth/Maps).<a class="anchor-link" href="#Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-%28spreadsheet%29-or-KML-%28Google-Earth/Maps%29.">¶</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><p><img src="Excel+to+iNat+CSV_files/fig3.png" alt=""></p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><h4 id="Here's-the-edit-screen-for-one-of-the-uploaded-observations">Here's the edit screen for one of the uploaded observations<a class="anchor-link" href="#Here%27s-the-edit-screen-for-one-of-the-uploaded-observations">¶</a></h4><p>Note that a tag is provided to identify uploaded observations.</p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><p><img src="Excel+to+iNat+CSV_files/fig4.png" alt=""></p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><h4 id="Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">Clean Up: Deleting observations added to iNaturalist during our test<a class="anchor-link" href="#Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">¶</a></h4><p>To delete observations added during the upload test:</p>
 <ul>
 <li>Search for observations using the tag provided by the uploader</li>
 <li>Select all </li>
 <li>Delete selected</li>
 </ul>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="Screenshot from 2016-08-28 02-09-00.png" alt=""></p>
+<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">¶</a></h4><p><img src="Excel+to+iNat+CSV_files/fig5.png" alt=""></p>
 
 </div>
 </div>
@@ -12445,5 +12546,6 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
     </div>
   </div>
-</body>
-</html>
+
+
+</body></html>
