@@ -6,3 +6,6 @@ Dr. Joel Miles, Palau Invasive Species Coordinator, has been storing data from a
 
  * that the Excel input file and the CSV output files are excluded from this repo because the data do not belong to me. 
 * For some reason, the Jupyter notebook renderer in GitHub does not show images. That's why I am linking out to **nbviewer**.
+* 
+
+[click here](Excel to iNat CSV.ipynb)
