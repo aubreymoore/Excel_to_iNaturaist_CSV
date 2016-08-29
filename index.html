@@ -11838,7 +11838,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11862,7 +11862,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Place name&#39;</span><span class="p">,</span> <span class="s1">&#39;Plant Code&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">])</span>
@@ -11884,7 +11884,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[33]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11963,7 +11963,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">])]</span> <span class="c1"># Remove rows where Plant Code is blank (null)</span>
@@ -11987,7 +11987,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                       <span class="c1"># Delete rows where any field is empty</span>
@@ -12011,7 +12011,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;x&#39;</span><span class="p">})</span>
@@ -12036,7 +12036,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">decimal_degrees</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
@@ -12068,7 +12068,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plant Code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
@@ -12083,7 +12083,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12147,7 +12147,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ACAAUR&#39;</span><span class="p">:</span> <span class="s1">&#39;Acacia auriculiformis&#39;</span><span class="p">,</span> 
@@ -12204,7 +12204,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
@@ -12218,7 +12218,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[40]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12303,7 +12303,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -12346,7 +12346,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Palau.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">text_file</span><span class="p">:</span>
@@ -12369,7 +12369,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Palau.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -12384,7 +12384,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12481,7 +12481,7 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Palau.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">myfile</span><span class="p">:</span>
@@ -12502,22 +12502,26 @@ As a technical challenge, I wrote this iPython notebook to wrangle the data into
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Results-of-Test-Upload">Results of Test Upload<a class="anchor-link" href="#Results-of-Test-Upload">&#182;</a></h3><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Upload-the-test-CSV-(first-ten-observations)">Upload the test CSV (first ten observations)<a class="anchor-link" href="#Upload-the-test-CSV-(first-ten-observations)">&#182;</a></h4><p>In the Add Observations dialog click on <strong>More import options</strong>, then <strong>CSV</strong>.</p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="upload1.png" alt="">
+<h1 id="Results-of-Test-Upload">Results of Test Upload<a class="anchor-link" href="#Results-of-Test-Upload">&#182;</a></h1><h2 id="Upload-the-test-CSV-(first-ten-observations)">Upload the test CSV (first ten observations)<a class="anchor-link" href="#Upload-the-test-CSV-(first-ten-observations)">&#182;</a></h2><blockquote><p>In the Add Observations dialog click on <strong>More import options</strong>, then <strong>CSV</strong>.</p>
+</blockquote>
+<p><img src="upload1.png" alt="">
 <img src="upload2.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">Within a few minutes after uploading the test CSV, I got an email message from iNaturalist<a class="anchor-link" href="#Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">&#182;</a></h4><p>If the upload fails, the email will let you know what needs to be fixed.</p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="fig1.png" alt="Email message from iNaturalist"></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">And here's what was diplayed when I clicked on the "View your observations" link:<a class="anchor-link" href="#And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">&#182;</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="fig2.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">Note: If you scroll to the bottom of the screen, links are provided to downlad data as a CSV (spreadsheet) or KML (Google Earth/Maps).<a class="anchor-link" href="#Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">&#182;</a></h4><h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="fig3.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Here's-the-edit-screen-for-one-of-the-uploaded-observations">Here's the edit screen for one of the uploaded observations<a class="anchor-link" href="#Here's-the-edit-screen-for-one-of-the-uploaded-observations">&#182;</a></h4><p>Note that a tag is provided to identify uploaded observations.</p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="fig4.png" alt=""></p>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><h4 id="Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">Clean Up: Deleting observations added to iNaturalist during our test<a class="anchor-link" href="#Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">&#182;</a></h4><p>To delete observations added during the upload test:</p>
+<h2 id="Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">Within a few minutes after uploading the test CSV, I got an email message from iNaturalist<a class="anchor-link" href="#Within-a-few-minutes-after-uploading-the-test-CSV,-I-got-an-email-message-from-iNaturalist">&#182;</a></h2><blockquote><p>If the upload fails, the email will let you know what needs to be fixed.</p>
+</blockquote>
+<p><img src="fig1.png" alt="Email message from iNaturalist"></p>
+<h2 id="And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">And here's what was diplayed when I clicked on the "View your observations" link:<a class="anchor-link" href="#And-here's-what-was-diplayed-when-I-clicked-on-the-&quot;View-your-observations&quot;-link:">&#182;</a></h2><p><img src="fig2.png" alt=""></p>
+<h2 id="Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">Note: If you scroll to the bottom of the screen, links are provided to downlad data as a CSV (spreadsheet) or KML (Google Earth/Maps).<a class="anchor-link" href="#Note:-If-you-scroll-to-the-bottom-of-the-screen,-links-are-provided-to-downlad-data-as-a-CSV-(spreadsheet)-or-KML-(Google-Earth/Maps).">&#182;</a></h2><p><img src="fig3.png" alt=""></p>
+<h2 id="Here's-the-edit-screen-for-one-of-the-uploaded-observations">Here's the edit screen for one of the uploaded observations<a class="anchor-link" href="#Here's-the-edit-screen-for-one-of-the-uploaded-observations">&#182;</a></h2><blockquote><p>Note that a tag is provided to identify uploaded observations.</p>
+</blockquote>
+<p><img src="fig4.png" alt=""></p>
+<h2 id="Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">Clean Up: Deleting observations added to iNaturalist during our test<a class="anchor-link" href="#Clean-Up:-Deleting-observations-added-to-iNaturalist-during-our-test">&#182;</a></h2><blockquote><p>To delete observations added during the upload test:</p>
 <ul>
 <li>Search for observations using the tag provided by the uploader</li>
 <li>Select all </li>
 <li>Delete selected</li>
 </ul>
-<h4 id="------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<a class="anchor-link" href="#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------">&#182;</a></h4><p><img src="fig5.png" alt=""></p>
+</blockquote>
+<p><img src="fig5.png" alt=""></p>
 
 </div>
 </div>
